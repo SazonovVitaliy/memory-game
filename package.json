@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "http://SazonovVitaliy.github.io/memory-game",
   "scripts": {
     "build": "set NODE_ENV='production' && webpack",
     "start": "webpack-dev-server --open"
@@ -22,6 +23,7 @@
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "file-loader": "^6.2.0",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.3.1",
