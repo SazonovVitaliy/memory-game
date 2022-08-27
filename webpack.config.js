@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
   mode: process.env.NODE_ENV === "production" ? "production" : "development",
   devtool: "eval-source-map",
@@ -30,8 +31,11 @@ module.exports = {
         loader: "ts-loader",
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ["file-loader"],
+        test: /\.(jpg|jpeg|gif|png|ico|svg)$/,
+        type: "dist/dest",
+        generator: {
+          filename: "img/[name][contenthash:6][ext]",
+        },
       },
     ],
   },
@@ -41,5 +45,13 @@ module.exports = {
       template: "./src/App/index.html",
     }),
     new CleanWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: "./public",
+          to: "dist/dest",
+        },
+      ],
+    }),
   ],
 };

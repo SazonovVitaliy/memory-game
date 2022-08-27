@@ -8,22 +8,22 @@ const App: FC = () => {
   const [choiceOne, setChoiceOne] = useState<ICard | undefined>();
   const [choiceTwo, setChoiceTwo] = useState<ICard | undefined>();
   const arr: ICard[] = [
-    { type: "lion", image: "./assets/2.jpg", status: "" },
-    { type: "leopard", image: "./assets/1.jpg", status: "" },
-    { type: "rabbit", image: "./assets/3.jpg", status: "" },
-    { type: "deer", image: "./assets/4.jpg", status: "" },
-    { type: "cat", image: "./assets/5.jpg", status: "" },
-    { type: "horse", image: "./assets/6.jpg", status: "" },
-    { type: "bear", image: "./assets/7.jpg", status: "" },
-    { type: "hedgehog", image: "./assets/8.jpg", status: "" },
-    { type: "leopard", image: "./assets/1.jpg", status: "" },
-    { type: "lion", image: "./assets/2.jpg", status: "" },
-    { type: "rabbit", image: "./assets/3.jpg", status: "" },
-    { type: "deer", image: "./assets/4.jpg", status: "" },
-    { type: "cat", image: "./assets/5.jpg", status: "" },
-    { type: "horse", image: "./assets/6.jpg", status: "" },
-    { type: "bear", image: "./assets/7.jpg", status: "" },
-    { type: "hedgehog", image: "./assets/8.jpg", status: "" },
+    { type: "lion", image: "./dist/dest/2.jpg", status: "" },
+    { type: "leopard", image: "./dist/dest/1.jpg", status: "" },
+    { type: "rabbit", image: "./dist/dest/3.jpg", status: "" },
+    { type: "deer", image: "./dist/dest/4.jpg", status: "" },
+    { type: "cat", image: "./dist/dest/5.jpg", status: "" },
+    { type: "horse", image: "./dist/dest/6.jpg", status: "" },
+    { type: "bear", image: "./dist/dest/7.jpg", status: "" },
+    { type: "hedgehog", image: "./dist/dest/8.jpg", status: "" },
+    { type: "leopard", image: "./dist/dest/1.jpg", status: "" },
+    { type: "lion", image: "./dist/dest/2.jpg", status: "" },
+    { type: "rabbit", image: "./dist/dest/3.jpg", status: "" },
+    { type: "deer", image: "./dist/dest/4.jpg", status: "" },
+    { type: "cat", image: "./dist/dest/5.jpg", status: "" },
+    { type: "horse", image: "./dist/dest/6.jpg", status: "" },
+    { type: "bear", image: "./dist/dest/7.jpg", status: "" },
+    { type: "hedgehog", image: "./dist/dest/8.jpg", status: "" },
   ];
   const handleReset = () => {
     setShuffledArray(arr.sort(() => Math.random() - 0.5));
