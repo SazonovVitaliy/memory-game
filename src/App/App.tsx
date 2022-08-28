@@ -35,6 +35,7 @@ const App: FC = () => {
   useEffect(() => {
     matches > 7 && setModal(true);
   }, [matches]);
+  useEffect(() => {}, [choiceOne, choiceTwo]);
   const handleReset = () => {
     setShuffledArray(arr.sort(() => Math.random() - 0.5));
     setTurns(0);
@@ -48,21 +49,21 @@ const App: FC = () => {
       card.status = "active";
       setChoiceOne(card);
       setChoiceTwo(undefined);
-    }
-    if (turns === 1) {
+    } else {
       card.status = "active";
       setChoiceTwo(card);
       setTurns(0);
     }
-    if (choiceOne.image !== choiceTwo.image) {
-      choiceOne.status = "";
-      choiceTwo.status = "";
-    } else {
+    if (choiceOne.image === choiceTwo.image) {
       choiceOne.status = "matches";
       choiceTwo.status = "matches";
       setMatches((prev) => prev + 1);
+    } else {
+      choiceOne.status = "";
+      choiceTwo.status = "";
     }
   };
+  console.log(matches);
 
   return (
     <>
