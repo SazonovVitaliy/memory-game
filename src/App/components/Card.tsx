@@ -1,18 +1,19 @@
 import React, { FC } from "react";
 import { ICard } from "../types";
+
 interface ICardProps {
   card: ICard;
-  handleChoice: (card: ICard) => void;
+  handleClickCard: (card: ICard, e: React.MouseEvent) => void;
 }
-const Card: FC<ICardProps> = ({ card, handleChoice }) => {
+
+const Card: FC<ICardProps> = ({ card, handleClickCard }) => {
   const itemClass = card.status ? card.status : "";
 
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (card) {
-      handleChoice(card);
-    }
+    handleClickCard(card, e);
   };
+
   return (
     <div className={"game-card" + itemClass} onClick={handleClick}>
       <img

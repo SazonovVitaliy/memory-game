@@ -5,13 +5,10 @@ interface IModal {
 }
 
 const Modal: FC<IModal> = ({ setVisible, visible }) => {
-  const rootClasses = ["modal"];
-  if (visible) {
-    rootClasses.push("active");
-  }
-
+  
+  const wrapperClassName = `modal ${visible ? "active" : ""}`;
   return (
-    <div className={rootClasses.join(" ")} onClick={() => setVisible(false)}>
+    <div className={wrapperClassName} onClick={() => setVisible(false)}>
       <div className={"modalContent"} onClick={(e) => e.stopPropagation()}>
         Поздравляем!!!
       </div>
