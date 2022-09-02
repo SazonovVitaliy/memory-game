@@ -19,6 +19,7 @@ body {
     rgba(0, 212, 255, 1) 100%
   );
 }
+
 .container {
   display: flex;
   margin: 0px auto;

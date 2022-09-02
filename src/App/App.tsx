@@ -11,8 +11,6 @@ const App: FC = () => {
   const [coincidence, setCoincidence] = useState(0);
 
   const handleReset = () => {
-    setCoincidence(0);
-    setModal(false);
     setShuffledCards(arr.sort(() => Math.random() - 0.5));
   };
 
@@ -33,8 +31,9 @@ const App: FC = () => {
   const handleClickCard = (card: ICard, e: React.MouseEvent) => {
     e.stopPropagation();
     card.status = "active";
+    console.log(openCards[0]);
 
-    if (openCards.length === 1) {
+    if (openCards.length === 1 && openCards[0].id !== card.id) {
       setOpenCards((prev) => [...prev, card]);
     } else {
       setOpenCards([card]);
